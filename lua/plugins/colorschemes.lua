@@ -5,7 +5,7 @@ return {
         event = "VeryLazy",
         config = function()
             require("everforest").setup({})
-            -- vim.cmd.colorscheme 'everforest'
+            vim.cmd.colorscheme 'everforest'
         end
     },
     {
@@ -32,7 +32,7 @@ return {
         opts = {},
         url = "https://bgithub.xyz/folke/tokyonight.nvim",
         config = function()
-            vim.cmd.colorscheme 'tokyonight-moon'
+            -- vim.cmd.colorscheme 'tokyonight-moon'
         end
     },
     {

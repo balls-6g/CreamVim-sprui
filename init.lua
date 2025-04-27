@@ -17,3 +17,5 @@ end
 vim.opt.rtp:prepend(lp)
 
 require("lazy").setup("plugins")
+
+require("configs.lspconfig")

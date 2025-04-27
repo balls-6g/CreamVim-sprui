@@ -1,2 +1,3 @@
 lazy-lock.json
-usr-plugs/rust-dev-plugs.lua
+plugins/rust-dev-plugs.lua
+plugins/web-dev-plugs.lua
