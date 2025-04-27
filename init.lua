@@ -17,4 +17,3 @@ end
 vim.opt.rtp:prepend(lp)
 
 require("lazy").setup("plugins")
-require("lazy").setup("usr-plugs")

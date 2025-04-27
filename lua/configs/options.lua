@@ -16,9 +16,21 @@ opt.shiftwidth = 4
 opt.shell = "fish"
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = {
+        source = "if_many",
+        format = function (diag)
+            return string.format("%s (%s)", diag.message, diag.source)
+        end
+    },
     signs = true,
     underline = true,
     -- update_in_insert = true,
     serverity_sort = true,
 })
+
+opt.termguicolors = true
+opt.signcolumn = "yes"
+
+opt.cursorline = true
+
+opt.clipboard:append("unnamedplus")

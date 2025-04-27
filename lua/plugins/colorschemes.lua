@@ -29,6 +29,7 @@ return {
     {
         "folke/tokyonight.nvim",
         event = "VeryLazy",
+        opts = {},
         url = "https://bgithub.xyz/folke/tokyonight.nvim",
         config = function()
             vim.cmd.colorscheme 'tokyonight-moon'

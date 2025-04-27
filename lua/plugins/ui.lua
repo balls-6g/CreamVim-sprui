@@ -18,11 +18,13 @@ return {
     },
     {
         "nvim-tree/nvim-web-devicons",
+        lazy = true,
         url = "https://bgithub.xyz/nvim-tree/nvim-web-devicons",
     },
     {
         "akinsho/bufferline.nvim",
         url = "https://bgithub.xyz/akinsho/bufferline.nvim",
+        event = { "BufReadPost", "BufNewFile" },
         dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require('bufferline').setup {}
@@ -77,5 +79,17 @@ return {
             require('transparent').clear_prefix('NvimLspconfig')
             require('transparent').clear_prefix('Mini')
         end
+    },
+    {
+        "sphamba/smear-cursor.nvim",
+        event = "VeryLazy",
+        url = "https://bgithub.xyz/sphamba/smear-cursor.nvim",
+        opts = {
+            stiffness = 0.8,
+            trailing_stiffness = 0.5,
+            stiffness_insert_mode = 0.6,
+            trailing_stiffness_insert_mode = 0.6,
+            distance_stop_animating = 0.5
+        }
     }
 }

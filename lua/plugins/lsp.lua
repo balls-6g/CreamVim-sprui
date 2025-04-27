@@ -1,11 +1,26 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "VeryLazy",
+        enabled = true,
+        event = { "BufReadPost", "BufNewFile" },
         url = "https://bgithub.xyz/nvim-treesitter/nvim-treesitter",
+        build = "TSUpdate",
+        opts = {},
         config = function ()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { "lua", "rust", "go", "markdown" }
+                ensure_installed = { "lua", "rust", "go", "markdown" },
+
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+                incremental_selection = { enable = true, },
+                indent = { enable = true, },
+                rainbow = {
+                    enable = true,
+                    extended_mode = true,
+                    max_file_lines = nil,
+                }
             }
         end
     },
@@ -39,8 +54,20 @@ return {
         config = function(_, opts)
             local lsp = require('lspconfig')
             local cpblt = require('blink.cmp').get_lsp_capabilities()
+            local on_attach = function (client, bufnr)
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr})
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
+            end
 
-            lsp['lua_ls'].setup({ capabilities = cpblt })
+            lsp.lua_ls.setup({
+                on_attach = on_attach,
+                capabilities = cpblt,
+                settings = {
+                    Lua = {
+                        diagnostics = { globals = { "vim" } },
+                    }
+                }
+            })
         end
     },
     { -- shit

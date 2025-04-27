@@ -10,4 +10,4 @@ km.set("n", "<C-l>", "<C-w>l")
 km.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
 km.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 
-km.set("n", "<C-x>", "<C-\\><C-n>")
+km.set("t", "<C-x>", "<C-\\><C-n>")
