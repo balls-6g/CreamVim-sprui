@@ -5,25 +5,7 @@ return {
         event = "VeryLazy",
         config = function()
             require("everforest").setup({})
-            vim.cmd.colorscheme 'everforest'
-        end
-    },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        event = "VeryLazy",
-        url = "https://bgithub.xyz/catppuccin/nvim",
-        config = function ()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                -- background = {
-                --     light = "latte",
-                --     dark = "mocha"
-                -- },
-
-            })
-
-            -- vim.cmd.colorscheme 'catppuccin'
+            -- vim.cmd.colorscheme 'everforest'
         end
     },
     {
@@ -36,11 +18,40 @@ return {
         end
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        url = "https://bgithub.xyz/ellisonleao/gruvbox.nvim",
+        "catppuccin/nvim",
         event = "VeryLazy",
-        config = function ()
-            -- vim.cmd.colorscheme 'gruvbox'
+        url = "https://bgithub.xyz/catppuccin/nvim",
+        config = function()
+            require('catppuccin').setup{
+                flavour = "auto", -- mocah, latte, frappe, macchiato
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
+                transparent_background = false,
+                term_colors = true,
+                integrations = {
+                    blink_cmp = true,
+                    gitsigns = true,
+                    treesitter = true,
+                    noice = true,
+                    notify = true,
+                    mini = {
+                        enabled = true,
+                        indentscope_color = "",
+                    },
+                    ts_rainbow2 = true,
+                }
+            }
+            vim.cmd.colorscheme 'catppuccin'
+        end
+    },
+    {
+        "felipeagc/fleet-theme-nvim",
+        event = "VeryLazy",
+        url = "https://bgithub.xyz/felipeagc/fleet-theme-nvim",
+        config = function()
+        --     vim.cmd.colorscheme("fleet")
         end
     }
 }

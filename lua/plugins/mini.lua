@@ -10,5 +10,6 @@ return {
         require("mini.git").setup()
         require("mini.files").setup()
         require("mini.icons").setup()
+        require("mini.surround").setup()
     end
 }

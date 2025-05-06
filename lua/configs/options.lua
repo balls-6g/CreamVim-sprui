@@ -7,8 +7,8 @@ opt.relativenumber = true
 opt.swapfile = false
 
 -- tabs VS space
-opt.softtabstop = 2
-opt.tabstop = 2
+opt.softtabstop = 4
+opt.tabstop = 4
 opt.expandtab = true
 opt.shiftwidth = 4
 
@@ -33,4 +33,6 @@ opt.signcolumn = "yes"
 
 opt.cursorline = true
 
-opt.clipboard:append("unnamedplus")
+opt.clipboard = "unnamedplus"
+
+opt.mouse = ""

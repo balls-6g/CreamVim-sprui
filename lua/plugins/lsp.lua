@@ -1,6 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        -- dependencies = "HiPhish/nvim-ts-rainbow2",
         enabled = true,
         event = { "BufReadPost", "BufNewFile" },
         url = "https://bgithub.xyz/nvim-treesitter/nvim-treesitter",
@@ -8,7 +9,7 @@ return {
         opts = {},
         config = function ()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { "lua", "rust", "go", "markdown", "javascript", "html", "css" },
+                ensure_installed = { "lua", "rust", "go", "markdown", "javascript", "html", "css", "c" },
 
                 highlight = {
                     enable = true,
@@ -20,7 +21,42 @@ return {
                     enable = true,
                     extended_mode = true,
                     max_file_lines = nil,
+                    -- query = 'rainbow-parens',
                 }
+            }
+        end
+    },
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        -- enabled = false,
+        event =  { "BufReadPost", "BufNewFile" },
+        url = "https://bgithub.xyz/HiPhish/rainbow-delimiters.nvim",
+        config = function ()
+            require('rainbow-delimiters.setup').setup {}
+
+            ---@type rainbow_delimiters.config
+            vim.g.rainbow_delimiters = {
+                strategy = {
+                    [''] = 'rainbow-delimiters.strategy.global',
+                    vim = 'rainbow-delimiters.strategy.local',
+                },
+                query = {
+                    [''] = 'rainbow-delimiters',
+                    lua = 'rainbow-blocks',
+                },
+                priority = {
+                    [''] = 110,
+                    lua = 210,
+                },
+                highlight = {
+                    'RainbowDelimiterRed',
+                    'RainbowDelimiterYellow',
+                    'RainbowDelimiterBlue',
+                    'RainbowDelimiterOrange',
+                    'RainbowDelimiterGreen',
+                    'RainbowDelimiterViolet',
+                    'RainbowDelimiterCyan',
+                },
             }
         end
     },

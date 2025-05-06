@@ -16,6 +16,6 @@ if not vim.loop.fs_stat(lp) then
 end
 vim.opt.rtp:prepend(lp)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", require("configs.lazy"))
 
 require("configs.lspconfig")
