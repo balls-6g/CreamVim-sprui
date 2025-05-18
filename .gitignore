@@ -1,4 +1,4 @@
-lazy-lock.json
-lua/plugins/rust-dev-plug.lua
-lua/plugins/web-plug.lua
-lua/configs/lspconfig.lua
+/lazy-lock.json
+/lua/plugins/rust-dev-plug.lua
+/lua/plugins/web-plug.lua
+/lua/configs/lspconfig.lua
