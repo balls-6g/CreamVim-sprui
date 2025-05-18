@@ -34,5 +34,3 @@ opt.signcolumn = "yes"
 opt.cursorline = true
 
 opt.clipboard = "unnamedplus"
-
-opt.mouse = ""

@@ -4,7 +4,7 @@ return {
         -- enabled =  false,
         -- priority = 1000,
         lazy = false,
-        url = "https://bgithub.xyz/folke/snacks.nvim",
+        -- url = "https://bgithub.xyz/folke/snacks.nvim",
         --@type snacks.Config
         opts = {
             bigfile = { enabled = true, },
@@ -143,7 +143,7 @@ return {
     },
     {
         "folke/which-key.nvim",
-        url = "https://bgithub.xyz/folke/which-key.nvim",
+        -- url = "https://bgithub.xyz/folke/which-key.nvim",
         event = "VeryLazy",
         opts = {
             -- your configuration comes here
@@ -162,7 +162,7 @@ return {
     },
     {
         "ibhagwan/fzf-lua",
-        url = "https://bgithub.xyz/ibhagwan/fzf-lua",
+        -- url = "https://bgithub.xyz/ibhagwan/fzf-lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         cmd = "FzfLua",
         keys = {
@@ -172,5 +172,27 @@ return {
             { "<leader>fg", ":FzfLua git_files<CR>", desc = "Fzf Git files" },
             { "<leader>:", ":FzfLua command_history<CR>", desc = "Fzf command history" },
         }
+    },
+    {
+        "folke/trouble.nvim",
+        opts = {},
+        -- url = "https://bgithub.xyz/folke/trouble.nvim",
+        cmd = "Trouble",
+        lazy = true,
+    },
+    {
+        "stevearc/oil.nvim",
+        opts = {},
+        dependencies = "echasnovski/mini.nvim",
+        cmd = "Oil",
+        config = function()
+            require("oil").setup()
+        end
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = "markdown",
+        opts = {},
+        dependencies = "echasnovski/mini.nvim"
     }
 }

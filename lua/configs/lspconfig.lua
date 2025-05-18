@@ -57,3 +57,10 @@ lsp.gopls.setup({
 --     on_attach = on_attach,
 --     settings = {}
 -- })
+
+lsp.yamlls.setup({
+    filetypes = "yaml",
+    capabilities = cpblt,
+    on_attach = on_attach,
+    settings = {}
+})
