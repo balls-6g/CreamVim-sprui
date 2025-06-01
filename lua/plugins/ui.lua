@@ -2,7 +2,6 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
-        url = "https://bgithub.xyz/nvim-lualine/lualine.nvim",
         event = { "BufReadPost", "BufNewFile" },
         config = function()
             require("lualine").setup({
@@ -19,11 +18,9 @@ return {
     {
         "nvim-tree/nvim-web-devicons",
         lazy = true,
-        url = "https://bgithub.xyz/nvim-tree/nvim-web-devicons",
     },
     {
         "akinsho/bufferline.nvim",
-        url = "https://bgithub.xyz/akinsho/bufferline.nvim",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
@@ -32,7 +29,6 @@ return {
     },
     {
         "folke/noice.nvim",
-        url = "https://bgithub.xyz/folke/noice.nvim",
         event = "VeryLazy",
         dependencies = {
             "MunifTanjim/nui.nvim",
@@ -61,29 +57,25 @@ return {
     {
         "MunifTanjim/nui.nvim",
         lazy = true,
-        url = "https://bgithub.xyz/MunifTanjim/nui.nvim",
     },
     {
         "rcarriga/nvim-notify",
         lazy = true,
-        url = "https://bgithub.xyz/rcarriga/nvim-notify"
-    },
+    },  
     {
         "xiyaowong/transparent.nvim",
-        url = "https://bgithub.xyz/xiyaowong/transparent.nvim",
         event = "VeryLazy",
         config = function ()
             require('transparent').clear_prefix('NeoTree')
             require('transparent').clear_prefix('lualine')
-            require('transparent').clear_prefix('Snacks')
             require('transparent').clear_prefix('NvimLspconfig')
             require('transparent').clear_prefix('Mini')
         end
     },
     {
         "sphamba/smear-cursor.nvim",
+        enabled = false,
         event = "VeryLazy",
-        url = "https://bgithub.xyz/sphamba/smear-cursor.nvim",
         opts = {
             stiffness = 0.8,
             trailing_stiffness = 0.5,
@@ -91,5 +83,34 @@ return {
             trailing_stiffness_insert_mode = 0.6,
             distance_stop_animating = 0.5
         }
-    }
+    },
+    {
+        "goolord/alpha-nvim",
+        lazy = false,
+        dependencies = { 'echasnovski/mini.icons' },
+        config = function()
+            local alpha = require("alpha")
+            local dashboard = require("alpha.themes.dashboard")
+
+            dashboard.section.header.val = {
+[[  ██████╗██████╗ ███████╗ █████╗ ███╗   ███╗██╗   ██╗██╗███╗   ███╗ ]],
+[[ ██╔════╝██╔══██╗██╔════╝██╔══██╗████╗ ████║██║   ██║██║████╗ ████║ ]],
+[[ ██║     ██████╔╝█████╗  ███████║██╔████╔██║██║   ██║██║██╔████╔██║ ]],
+[[ ██║     ██╔══██╗██╔══╝  ██╔══██║██║╚██╔╝██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+[[ ╚██████╗██║  ██║███████╗██║  ██║██║ ╚═╝ ██║ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+[[  ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+[[                           v0.0.1-nightly                           ]],
+[[                                                                    ]],
+}
+
+            dashboard.section.buttons.val = {
+                dashboard.button("n", "  New file", "<Cmd>new<CR>"),
+                dashboard.button("f", "󰈞  Find file", "<Cmd>Telescope find_files<CR>"),
+                dashboard.button("r", "  Recent files", "<Cmd>Telescope oldfiles<CR>"),
+                dashboard.button("q", "  Quit", "<Cmd>qa<CR>"),
+            }
+
+            alpha.setup(dashboard.config)
+        end,
+    },
 }

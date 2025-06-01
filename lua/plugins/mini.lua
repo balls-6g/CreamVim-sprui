@@ -1,15 +1,21 @@
 return {
-    "echasnovski/mini.nvim",
-    keys = {
-        { "<leader>mf", ":lua MiniFiles.open()<CR>", desc = "mini file explorer" }
+    {
+        "echasnovski/mini-git",
+        cmd = "Git",
+        config = function()
+            require("mini.git").setup()
+        end
     },
-    event = "VeryLazy",
-    url = "https://bgithub.xyz/echasnovski/mini.nvim",
-    config = function()
-        require("mini.pairs").setup()
-        require("mini.git").setup()
-        require("mini.files").setup()
-        require("mini.icons").setup()
-        require("mini.surround").setup()
-    end
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
+    {
+        "echasnovski/mini.icons",
+        event = "VeryLazy",
+        config = function()
+            require("mini.icons").setup()
+        end
+    },
 }

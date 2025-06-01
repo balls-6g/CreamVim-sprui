@@ -7,11 +7,13 @@ km.set("n", "<C-k>", "<C-w>k")
 km.set("n", "<C-l>", "<C-w>l")
 
 -- bufferline
-km.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
-km.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
+km.set("n", "<Tab>", ":BufferLineCycleNext<CR>", {desc = "Next buffer"})
+km.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", {desc = "Previous buffer"})
 
 km.set("t", "<C-x>", "<C-\\><C-n>", {desc = "back to NORMAL mode"})
 
 km.set("i", "/* ", "/*  */<Left><Left><Left>")
 
 km.set("n", ";", ":")
+-- back to normal mode
+km.set("i", "jk", "<Esc>", {desc = "back to NORMAL mode"})

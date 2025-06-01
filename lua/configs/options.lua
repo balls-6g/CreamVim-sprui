@@ -13,7 +13,7 @@ opt.expandtab = true
 opt.shiftwidth = 4
 
 -- shell
-opt.shell = "fish"
+vim.o.shell = "bash"
 
 vim.diagnostic.config({
     virtual_text = {

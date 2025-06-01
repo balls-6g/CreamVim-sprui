@@ -1,4 +1,4 @@
-return {}
+-- return {}
 
 -- return {
 --     "codota/tabnine-nvim",
@@ -23,3 +23,10 @@ return {}
 --         })
 --     end
 -- }
+
+return {
+    "github/copilot.vim",
+    event = { "BufNewFile", "BufReadPost" },
+    config = function()
+    end
+}

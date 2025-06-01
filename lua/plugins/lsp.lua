@@ -4,12 +4,11 @@ return {
         -- dependencies = "HiPhish/nvim-ts-rainbow2",
         enabled = true,
         event = { "BufReadPost", "BufNewFile" },
-        url = "https://bgithub.xyz/nvim-treesitter/nvim-treesitter",
         build = "TSUpdate",
         opts = {},
         config = function ()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { "lua", "rust", "go", "markdown", "javascript", "html", "css", "c" },
+                ensure_installed = { "lua", "rust", "go", "markdown", "javascript", "html", "css", "c", "nix", "bash" },
 
                 highlight = {
                     enable = true,
@@ -30,7 +29,6 @@ return {
         "HiPhish/rainbow-delimiters.nvim",
         -- enabled = false,
         event =  { "BufReadPost", "BufNewFile" },
-        url = "https://bgithub.xyz/HiPhish/rainbow-delimiters.nvim",
         config = function ()
             require('rainbow-delimiters.setup').setup {}
 
@@ -63,7 +61,6 @@ return {
     {
         "williamboman/mason.nvim",
         event = "VeryLazy",
-        url = "https://bgithub.xyz/williamboman/mason.nvim",
         config = function()
             require("mason").setup()
         end
@@ -75,7 +72,6 @@ return {
             "neovim/nvim-lspconfig",
             "mason.nvim",
         },
-        url = "https://bgithub.xyz/williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup {
                 ensure_installed = { "lua_ls" },
@@ -86,7 +82,6 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = { "saghen/blink.cmp" },
         event = "InsertEnter",
-        url = "https://bgithub.xyz/neovim/nvim-lspconfig",
         config = function(_, opts)
             local lsp = require('lspconfig')
             local cpblt = require('blink.cmp').get_lsp_capabilities()
@@ -110,7 +105,6 @@ return {
         "Saghen/blink.cmp",
         -- enabled = false,
         event = { "InsertEnter" },
-        url = "https://bgithub.xyz/Saghen/blink.cmp",
         dependencies = {
             "rafamadriz/friendly-snippets",
             "L3MON4D3/LuaSnip",
@@ -168,12 +162,10 @@ return {
     {
         "rafamadriz/friendly-snippets",
         lazy = true,
-        url = "https://bgithub.xyz/rafamadriz/friendly-snippets",
     },
     { -- fuck
         "L3MON4D3/LuaSnip",
         lazy = false,
-        url = "https://bgithub.xyz/L3MON4D3/LuaSnip",
         config = function()
             require("luasnip").setup({
                 history = true,
@@ -184,6 +176,6 @@ return {
     },
     {
         "soifou/blink_luasnip",
-        url = "https://bgithub.xyz/soifou/blink_luasnip",
+        lazy = true,
     }
 }
