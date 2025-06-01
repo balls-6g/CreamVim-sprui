@@ -20,15 +20,6 @@ return {
         lazy = true,
     },
     {
-        "LintaoAmons/scratch.nvim",
-        cmd = {
-            "Scratch",
-            "ScratchWithName",
-            "ScratchOpen",
-            "ScratchOpenFzf"
-        }
-    },
-    {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
 

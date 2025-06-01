@@ -99,7 +99,7 @@ return {
 [[ ██║     ██╔══██╗██╔══╝  ██╔══██║██║╚██╔╝██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
 [[ ╚██████╗██║  ██║███████╗██║  ██║██║ ╚═╝ ██║ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
 [[  ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
-[[                           v0.0.1-nightly                           ]],
+[[                         v0.0.1-nightly                            ]],
 [[                                                                    ]],
 }
 
@@ -107,6 +107,7 @@ return {
                 dashboard.button("n", "  New file", "<Cmd>new<CR>"),
                 dashboard.button("f", "󰈞  Find file", "<Cmd>Telescope find_files<CR>"),
                 dashboard.button("r", "  Recent files", "<Cmd>Telescope oldfiles<CR>"),
+                dashboard.button("t", "  Terminal", "<Cmd>ToggleTerm<CR>"),
                 dashboard.button("q", "  Quit", "<Cmd>qa<CR>"),
             }
 
