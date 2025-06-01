@@ -145,6 +145,9 @@ return {
                     ['<C-y>'] = {},
 
                     ['<C-s>'] = { function(cmp) cmp.show({ providers = {'snippets'} }) end },
+
+                    ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+                    ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
                 },
 
 
@@ -152,9 +155,28 @@ return {
                     nerd_font_variant = 'mono',
                 },
 
-                completion = { documentation = { auto_show = true, } },
+                completion = {
+                    documentation = { auto_show = true, },
+                    menu = {
+                        draw = {
+                            columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+                        }
+                    }
+                },
+
+                cmdline = {
+                    completion = {
+                        menu = {
+                            auto_show = true,
+                        }
+                    }
+                },
 
                 fuzzy = { implementation = "prefer_rust_with_warning" },
+
+                signature = {
+                    enabled = true,
+                },
             }
             opts_extend = { "sources.default" }
         end

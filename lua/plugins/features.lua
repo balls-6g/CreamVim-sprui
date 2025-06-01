@@ -43,5 +43,57 @@ return {
                 direction = "float",
             })
         end
+    },
+    {
+        "athar-qadri/scratchpad.nvim",
+        cmd = { "Scratch" },
+        keys = {
+            {
+                "<leader>es",
+                function()
+                    local scratchpad = require("scratchpad")
+                    scratchpad.ui:new_scratchpad()
+                end,
+                desc = "show scratch pad",
+
+                vim.keymap.set({ "n", "v" }, "<leader>es", function()
+                    local scratchpad = require("scratchpad")
+                    scratchpad.ui:sync()
+                end, { desc = "Push selection / current line to scratchpad" })
+            }
+        },
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local scratchpad = require("scratchpad")
+            scratchpad:setup({
+                filetype = {"markdown"},
+                settings = { sync_on_ui_close = true }
+            })
+        end,
+    },
+    {
+        "stevearc/conform.nvim",
+        event = {
+            "BufWritePre",
+            "BufNewFile",
+            "BufReadPost",
+        },
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    lua = { "stylua" },
+                    javascript = { "prettier" },
+                    typescript = { "prettier" },
+                    html = { "prettier" },
+                    css = { "prettier" },
+                    json = { "prettier" },
+                    markdown = { "prettier" },
+                    python = { "black" },
+                    go = { "gofumpt" },
+                    rust = { "rustfmt" },
+                    sh = { "shfmt" },
+                },
+            })
+        end
     }
 }
