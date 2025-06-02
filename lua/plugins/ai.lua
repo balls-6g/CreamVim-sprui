@@ -25,8 +25,7 @@
 -- }
 
 return {
-    "github/copilot.vim",
-    event = { "BufNewFile", "BufReadPost" },
-    config = function()
-    end
+	"github/copilot.vim",
+	event = { "BufNewFile", "BufReadPost" },
+	config = function() end,
 }

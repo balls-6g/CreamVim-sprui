@@ -23,3 +23,6 @@ km.set("i", "jk", "<Esc>", {desc = "back to NORMAL mode"})
 
 -- lsp goto definitions
 km.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {desc = "Go to definition"})
+
+-- lsp hover
+km.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {desc = "Hover documentation"})

@@ -20,17 +20,6 @@ return {
         lazy = true,
     },
     {
-        "nvim-telescope/telescope.nvim",
-        cmd = "Telescope",
-
-        keys = {
-            { "<leader>uC", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
-        },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
-    {
         "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
        keys = {
@@ -45,34 +34,11 @@ return {
         end
     },
     {
-        "athar-qadri/scratchpad.nvim",
-        cmd = { "Scratch" },
-        keys = {
-            {
-                "<leader>es",
-                function()
-                    local scratchpad = require("scratchpad")
-                    scratchpad.ui:new_scratchpad()
-                end,
-                desc = "show scratch pad",
-
-                vim.keymap.set({ "n", "v" }, "<leader>es", function()
-                    local scratchpad = require("scratchpad")
-                    scratchpad.ui:sync()
-                end, { desc = "Push selection / current line to scratchpad" })
-            }
-        },
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            local scratchpad = require("scratchpad")
-            scratchpad:setup({
-                filetype = {"markdown"},
-                settings = { sync_on_ui_close = true }
-            })
-        end,
-    },
-    {
         "stevearc/conform.nvim",
+        keys = {
+            { "<leader>cf", "<cmd>Format<cr>", desc = "Format current buffer" },
+        },
+        cmd = { "ConformInfo", "Format" },
         event = {
             "BufWritePre",
             "BufNewFile",
@@ -93,6 +59,12 @@ return {
                     rust = { "rustfmt" },
                     sh = { "shfmt" },
                 },
+            })
+
+            vim.api.nvim_create_user_command("Format", function ()
+                require("conform").format({})
+            end, {
+                desc = "Format the current buffer",
             })
         end
     }

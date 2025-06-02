@@ -1,7 +1,7 @@
 return {
     {
         "neanias/everforest-nvim",
-        event = "VeryLazy",
+        lazy = true,
         config = function()
             require("everforest").setup({})
             -- vim.cmd.colorscheme 'everforest'
@@ -9,7 +9,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        event = "VeryLazy",
+        lazy = true,
         opts = {},
         config = function()
             -- vim.cmd.colorscheme 'tokyonight-moon'
@@ -39,6 +39,7 @@ return {
                     },
                     ts_rainbow2 = true,
                     bufferline = true,
+                    alpha = true,
                 }
             }
             vim.cmd.colorscheme 'catppuccin'

@@ -108,7 +108,6 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
             "L3MON4D3/LuaSnip",
-            "soifou/blink_luasnip",
         },
         version = '1.*',
 
@@ -124,12 +123,6 @@ return {
                             enabled = true,
                             module = "blink.cmp.sources.lsp",
                             score_offset = 1000,
-                        },
-                        luasnip = {
-                            name = 'luasnip',
-                            enabled = true,
-                            module = "blink_luasnip",
-                            score_offset = 950,
                         },
                     }
                 },
@@ -185,19 +178,18 @@ return {
         "rafamadriz/friendly-snippets",
         lazy = true,
     },
-    { -- fuck
+    {
         "L3MON4D3/LuaSnip",
-        lazy = false,
+        lazy = true,
         config = function()
-            require("luasnip").setup({
+            local ls = require("luasnip")
+
+            ls.setup({
                 history = true,
                 delete_check_events = "TextChanged",
             })
+
             require("luasnip.loaders.from_vscode").lazy_load()
         end
     },
-    {
-        "soifou/blink_luasnip",
-        lazy = true,
-    }
 }
