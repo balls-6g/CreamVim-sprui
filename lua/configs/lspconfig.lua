@@ -78,3 +78,10 @@ lsp.wgsl_analyzer.setup({
 	on_attach = on_attach,
 	settings = {},
 })
+
+lsp.zls.setup({
+    filetypes = { "zig" },
+    capabilities = cpblt,
+    on_attach = on_attach,
+    settings = {},
+})

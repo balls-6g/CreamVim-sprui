@@ -16,6 +16,15 @@ return {
 				desc = "Buffer Local Keymaps (which-key)",
 			},
 		},
+
+        config = function()
+            local wk = require("which-key")
+            wk.add({
+                { "<leader>u", group = "ui", desc = "UI" },
+                { "<leader>f", group = "find", desc = "Find" },
+                { "<leader>g", group = "git", desc = "Git" },
+            })
+        end
 	},
 	{
 		"ibhagwan/fzf-lua",
