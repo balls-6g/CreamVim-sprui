@@ -36,7 +36,7 @@ return {
 			{ "<leader>/", "<cmd>FzfLua live_grep<CR>", desc = "Fzf Live Grep" },
 			{ "<leader>fg", "<cmd>FzfLua git_files<CR>", desc = "Fzf Git files" },
 			{ "<leader>:", "<cmd>FzfLua command_history<CR>", desc = "Fzf command history" },
-            { "<leader>uC", "<cmd>FzfLua colorscheme<CR>", desc = "Fzf colorscheme" },
+            { "<leader>uC", "<cmd>FzfLua colorschemes<CR>", desc = "Fzf colorscheme" },
             { "<leader>fr", "<cmd>FzfLua oldfiles<CR>", desc = "Fzf recent files" },
 		},
 	},
@@ -52,7 +52,7 @@ return {
 		dependencies = "echasnovski/mini.icons",
 		cmd = "Oil",
 		keys = {
-			{ "<leader>e", "<cmd>Oil<cr>", desc = "Open Oil File Explorer" },
+			{ "-", "<cmd>Oil<cr>", desc = "Open Oil File Explorer" },
 		},
 		config = function()
 			require("oil").setup({

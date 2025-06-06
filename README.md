@@ -14,7 +14,7 @@ and feature-rich experience. It is designed to be easy to use for beginners whil
 - A terminal that supports true color (256 colors)
     - Top recommended terminal emulators:
         - Alacritty
-        - Kitty
+        - Kitty # I love this!!!!
         - WezTerm
         - GNOME Terminal
         - iTerm2 (macOS)

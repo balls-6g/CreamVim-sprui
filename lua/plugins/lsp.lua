@@ -108,6 +108,7 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
             "L3MON4D3/LuaSnip",
+            "soifou/blink_luasnip",
         },
         version = '1.*',
 
@@ -124,6 +125,16 @@ return {
                             module = "blink.cmp.sources.lsp",
                             score_offset = 1000,
                         },
+                        snippets = {
+                            name = "luasnip",
+                            module = "blink_luasnip",
+
+                            score_offset = -3,
+                            opts = {
+                                use_show_condition = false,
+                                show_autosnippets = true,
+                            }
+                        }
                     }
                 },
 
@@ -173,6 +184,10 @@ return {
             }
             opts_extend = { "sources.default" }
         end
+    },
+    {
+        "soifou/blink_luasnip",
+        lazy = true,
     },
     {
         "rafamadriz/friendly-snippets",
