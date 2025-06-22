@@ -17,14 +17,15 @@ return {
 			},
 		},
 
-        config = function()
-            local wk = require("which-key")
-            wk.add({
-                { "<leader>u", group = "ui", desc = "UI" },
-                { "<leader>f", group = "find", desc = "Find" },
-                { "<leader>g", group = "git", desc = "Git" },
-            })
-        end
+		config = function()
+			local wk = require("which-key")
+			wk.add({
+				{ "<leader>u", group = "ui", desc = "UI" },
+				{ "<leader>f", group = "find", desc = "Find" },
+				{ "<leader>g", group = "git", desc = "Git" },
+				{ "<leader>d", group = "debug", desc = "Debug" },
+			})
+		end,
 	},
 	{
 		"ibhagwan/fzf-lua",
@@ -36,8 +37,8 @@ return {
 			{ "<leader>/", "<cmd>FzfLua live_grep<CR>", desc = "Fzf Live Grep" },
 			{ "<leader>fg", "<cmd>FzfLua git_files<CR>", desc = "Fzf Git files" },
 			{ "<leader>:", "<cmd>FzfLua command_history<CR>", desc = "Fzf command history" },
-            { "<leader>uC", "<cmd>FzfLua colorschemes<CR>", desc = "Fzf colorscheme" },
-            { "<leader>fr", "<cmd>FzfLua oldfiles<CR>", desc = "Fzf recent files" },
+			{ "<leader>uC", "<cmd>FzfLua colorschemes<CR>", desc = "Fzf colorscheme" },
+			{ "<leader>fr", "<cmd>FzfLua oldfiles<CR>", desc = "Fzf recent files" },
 		},
 	},
 	{
@@ -65,5 +66,19 @@ return {
 		ft = "markdown",
 		opts = {},
 		dependencies = "echasnovski/mini.icons",
+	},
+	{
+		"nvim-neorg/neorg",
+		ft = "norg",
+		config = function()
+			require("neorg").setup({})
+		end,
+	},
+	{
+		"balls-6g/notes-nvim",
+		cmd = "Notes",
+		config = function()
+			require("notes-nvim").setup()
+		end,
 	},
 }

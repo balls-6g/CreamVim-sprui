@@ -7,7 +7,7 @@ local on_attach = function(client, bufnr)
 end
 
 lsp.ts_ls.setup({
-	filetypes = { "javascriptreact", "javascript" },
+	filetypes = { "javascriptreact", "javascript", "typescript", "typescriptreact" },
 	capabilities = cpblt,
 	on_attach = on_attach,
 	settings = {},
@@ -80,8 +80,40 @@ lsp.wgsl_analyzer.setup({
 })
 
 lsp.zls.setup({
-    filetypes = { "zig" },
-    capabilities = cpblt,
-    on_attach = on_attach,
-    settings = {},
+	filetypes = { "zig" },
+	capabilities = cpblt,
+	on_attach = on_attach,
+	settings = {},
+})
+
+lsp.html.setup({
+	filetypes = { "html" },
+	capabilities = cpblt,
+	on_attach = on_attach,
+	settings = {
+		html = {
+			format = {
+				enable = true,
+			},
+			suggest = {
+				angular1x = true,
+				angular2x = true,
+				html5 = true,
+			},
+		},
+	},
+})
+
+lsp.vimls.setup({
+	filetypes = { "vim" },
+	capabilities = cpblt,
+	on_attach = on_attach,
+	settings = {
+		vimls = {
+			lintOnChange = true,
+			lintOnSave = true,
+			lintOnInsertLeave = true,
+			lintOnTextChanged = true,
+		},
+	},
 })

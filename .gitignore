@@ -1,3 +1,5 @@
 /lazy-lock.json
 /lua/plugins/rust-dev-plug.lua
 /lua/plugins/web-plug.lua
+/lua/localplugin
+/notes

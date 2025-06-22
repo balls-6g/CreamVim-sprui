@@ -116,4 +116,15 @@ return {
 			alpha.setup(dashboard.config)
 		end,
 	},
+    { -- indent-blankline.nvim
+        "lukas-reineke/indent-blankline.nvim",
+        event = {
+            "BufReadPost",
+            "BufNewFile",
+            "BufWritePost",
+        },
+        config = function()
+            require("ibl").setup({})
+        end,
+    }
 }
