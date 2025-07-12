@@ -24,6 +24,7 @@ return {
 				{ "<leader>f", group = "find", desc = "Find" },
 				{ "<leader>g", group = "git", desc = "Git" },
 				{ "<leader>d", group = "debug", desc = "Debug" },
+				{ "<leader>c", group = "code", desc = "Code" },
 			})
 		end,
 	},
@@ -78,7 +79,10 @@ return {
 		"balls-6g/notes-nvim",
 		cmd = "Notes",
 		config = function()
-			require("notes-nvim").setup()
+			require("notes-nvim").setup({
+				namespace = "balls-6g",
+				file_ext = "md",
+			})
 		end,
 	},
 }

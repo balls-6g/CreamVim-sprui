@@ -28,7 +28,6 @@ return {
 
 		config = function()
 			require("toggleterm").setup({
-				shell = "fish",
 				direction = "float",
 			})
 		end,

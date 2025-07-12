@@ -21,6 +21,8 @@ return {
 					"bash",
 					"zig",
 					"norg",
+					"typescript",
+					"haskell",
 				},
 
 				highlight = {

@@ -12,20 +12,17 @@ opt.tabstop = 4
 opt.expandtab = true
 opt.shiftwidth = 4
 
--- shell
-vim.o.shell = "bash"
-
 vim.diagnostic.config({
-    virtual_text = {
-        source = "if_many",
-        format = function (diag)
-            return string.format("%s (%s)", diag.message, diag.source)
-        end
-    },
-    signs = true,
-    underline = true,
-    -- update_in_insert = true,
-    serverity_sort = true,
+	virtual_text = {
+		source = "if_many",
+		format = function(diag)
+			return string.format("%s (%s)", diag.message, diag.source)
+		end,
+	},
+	signs = true,
+	underline = true,
+	-- update_in_insert = true,
+	serverity_sort = true,
 })
 
 opt.termguicolors = true

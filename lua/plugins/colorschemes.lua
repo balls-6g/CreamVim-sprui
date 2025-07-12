@@ -4,7 +4,7 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("catppuccin").setup({
-				flavour = "auto", -- mocah, latte, frappe, macchiato
+				flavour = "mocha", -- mocah, latte, frappe, macchiato
 				background = {
 					light = "latte",
 					dark = "mocha",

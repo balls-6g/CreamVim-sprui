@@ -117,3 +117,18 @@ lsp.vimls.setup({
 		},
 	},
 })
+
+lsp.hls.setup({
+	filetypes = { "haskell", "lhaskell", "cabal" },
+	capabilities = cpblt,
+	on_attach = on_attach,
+	settings = {
+		hls = {
+			hlintOn = true,
+			hlintOnChange = true,
+			hlintOnSave = true,
+			hlintOnTextChanged = true,
+			hlintOnInsertLeave = true,
+		},
+	},
+})
